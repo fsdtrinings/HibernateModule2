@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+      <class name="com.infogain.model.Employee"
+     table="EmpTest">
+            <id name="eId" type="java.lang.Integer">
+            <column name="Emp_ID" />
+       <generator class="increment" /> 
+      <!--       <generator class="assigned" />  -->
+               </id>
+            
+    <property name="name" type="java.lang.String">
+    <column name="Emp_NAME" length="20" not-null="true" unique="true" />
+        </property>
+            <property name="address" type="java.lang.String">
+            <column name="Emp_ADDRESS" length="100" not-null="true"/>
+        </property>
+        </class>
+</hibernate-mapping>

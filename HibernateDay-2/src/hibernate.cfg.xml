@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <!-- db specific information -->
+          	<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@127.0.0.1:1521:XE
+		</property>
+		<property name="hibernate.connection.username">hr</property>
+		<property name="hibernate.connection.password">hr</property>
+			<!-- Hibernate specific information -->
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property> 
+	<!-- 	<mapping class="com.colmapping.model.Employee"></mapping> --> 
+	
+	<!-- Annotated class used for one to one assocation mapping -->
+	<!-- <mapping class="com.onetoonepkfk.Country"></mapping>
+	<mapping class="com.onetoonepkfk.HeadOfState"></mapping>
+	 -->
+	 
+	<!-- Annotated class used for one to one bidirectional
+	 assocation mapping -->
+	
+	<mapping class="com.onetoonepkfkbidrctional.Country"></mapping>
+	<mapping class="com.onetoonepkfkbidrctional.HeadOfState"></mapping>
+
+<!-- Annotated class used for one to  Many 
+	 assocation mapping -->
+	
+	<mapping class="com.onetomanypkfk.Batch"></mapping>
+	<mapping class="com.onetomanypkfk.Trainer"></mapping>
+<!-- Annotated class used for Many to  Many 
+	 assocation mapping -->
+	
+	<mapping class="com.manytomanybidirctional.jointable.Employee"></mapping>
+	<mapping class="com.manytomanybidirctional.jointable.Previledge"></mapping>
+
+<!-- Annotated class used for  Component  
+	 mapping -->
+	
+	<mapping class="com.componentmapping.Emp"></mapping>
+	
+
+
+</session-factory>
+</hibernate-configuration>

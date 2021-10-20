@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    <!-- db specific information -->
+          	<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@127.0.0.1:1521:XE
+		</property>
+		<property name="hibernate.connection.username">hr</property>
+		<property name="hibernate.connection.password">hr</property>
+			<!-- Hibernate specific information -->
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.hbm2ddl.auto">update</property> 
+		<!-- Annotated class used for SingleTablePerClassHierrachy Inheritance Mapping -->
+ <!-- <mapping class="com.inheritance.singletableperclasshierarchy.Person"></mapping>
+ <mapping class="com.inheritance.singletableperclasshierarchy.Employee"></mapping>
+ <mapping class="com.inheritance.singletableperclasshierarchy.Student"></mapping> 
+ -->
+	<!-- Annotated class used for Table Per Concrete Class 
+	Inheritance Mapping -->
+ <!-- <mapping class="com.inheritance.tableperclass.Person"></mapping>
+ <mapping class="com.inheritance.tableperclass.Employee"></mapping>
+ <mapping class="com.inheritance.tableperclass.Student"></mapping>
+
+ -->
+<!-- Annotated class used for TablePerSubclassJoined 
+	Inheritance Mapping -->
+ <!-- <mapping class="com.inheritance.tablepersubclassjoined.Person"></mapping>
+ <mapping class="com.inheritance.tablepersubclassjoined.Employee"></mapping>
+ <mapping class="com.inheritance.tablepersubclassjoined.Student"></mapping>
+ -->
+
+<!-- Annotated class used for  HQL -->
+ <mapping class="com.hql.Address"></mapping>
+ <mapping class="com.hql.Employee"></mapping>
+ 
+
+
+
+
+	</session-factory>
+</hibernate-configuration>
+
+
+
